@@ -1,0 +1,250 @@
+/* =============================================
+   App.css - УЛУЧШЕННЫЙ МОЩНЫЙ ДИЗАЙН ДЛЯ QUIZ
+   ============================================= */
+
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--bg) 0%, #f8f5ff 100%);
+  font-family: var(--sans);
+  position: relative;
+  overflow: hidden;
+}
+
+.App::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at 30% 20%, rgba(170, 59, 255, 0.08) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* =============================================
+   Заголовок
+   ============================================= */
+.App h1 {
+  font-size: 3.2rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, var(--accent), #7b3fff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 2.5rem;
+  letter-spacing: -2px;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.App h1 i {
+  font-style: normal;
+}
+
+/* =============================================
+   Login экран
+   ============================================= */
+.login {
+  background: var(--bg);
+  padding: 3rem 2.5rem;
+  border-radius: 24px;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border);
+  width: 100%;
+  max-width: 420px;
+  z-index: 2;
+  position: relative;
+}
+
+.login::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 24px;
+  background: linear-gradient(145deg, rgba(170, 59, 255, 0.06), transparent);
+  pointer-events: none;
+}
+
+.login input {
+  width: 100%;
+  padding: 18px 20px;
+  font-size: 1.1rem;
+  border: 2px solid var(--border);
+  border-radius: 16px;
+  margin-bottom: 1.25rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  background: var(--bg);
+}
+
+.login input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 5px rgba(170, 59, 255, 0.15);
+  transform: translateY(-2px);
+}
+
+.login button {
+  width: 100%;
+  padding: 18px;
+  font-size: 1.15rem;
+  font-weight: 600;
+  background: linear-gradient(90deg, var(--accent), #9f2be8);
+  color: white;
+  border-radius: 16px;
+  box-shadow: 0 10px 20px rgba(170, 59, 255, 0.3);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.login button:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 15px 25px rgba(170, 59, 255, 0.4);
+}
+
+.login button:active {
+  transform: translateY(-1px) scale(0.98);
+}
+
+/* =============================================
+   Quiz экран
+   ============================================= */
+.quiz {
+  width: 100%;
+  max-width: 720px;
+  background: var(--bg);
+  border-radius: 28px;
+  padding: 2.5rem 3rem;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border);
+  position: relative;
+  z-index: 2;
+}
+
+.quiz h1 {
+  font-size: 2.1rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-h);
+}
+
+.quiz h2 {
+  font-size: 1.35rem;
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 2rem;
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+
+/* Вопрос */
+.question {
+  background: var(--bg);
+  padding: 2rem;
+  border-radius: 20px;
+  border: 2px solid var(--border);
+  margin-bottom: 2rem;
+  min-height: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.question p {
+  font-size: 1.35rem;
+  line-height: 1.45;
+  color: var(--text-h);
+  margin-bottom: 1.75rem;
+  font-weight: 500;
+}
+
+/* Кнопки ответов */
+.answer-btn {
+  width: 100%;
+  padding: 18px 24px;
+  margin-bottom: 12px;
+  font-size: 1.1rem;
+  text-align: left;
+  border: 2px solid var(--border);
+  background: var(--bg);
+  color: var(--text-h);
+  border-radius: 16px;
+  transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+  font-weight: 500;
+  position: relative;
+  overflow: hidden;
+}
+
+.answer-btn:hover {
+  border-color: var(--accent);
+  transform: translateX(8px);
+  box-shadow: 0 8px 20px rgba(170, 59, 255, 0.2);
+}
+
+.answer-btn:last-child {
+  margin-bottom: 0;
+}
+
+/* Счёт */
+.quiz p:last-child {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-align: center;
+  background: var(--accent-bg);
+  padding: 12px 24px;
+  border-radius: 9999px;
+  display: inline-block;
+  margin: 1.5rem auto 0;
+  border: 2px solid var(--accent-border);
+}
+
+/* =============================================
+   Анимации и улучшения
+   ============================================= */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.login,
+.quiz {
+  animation: fadeInUp 0.6s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.answer-btn {
+  animation: fadeInUp 0.4s cubic-bezier(0.25, 0.1, 0.25, 1) both;
+}
+
+.answer-btn:nth-child(1) { animation-delay: 50ms; }
+.answer-btn:nth-child(2) { animation-delay: 100ms; }
+.answer-btn:nth-child(3) { animation-delay: 150ms; }
+
+/* Адаптив */
+@media (max-width: 768px) {
+  .App h1 {
+    font-size: 2.4rem;
+  }
+  
+  .login,
+  .quiz {
+    padding: 2rem 1.5rem;
+    margin: 1rem;
+    border-radius: 20px;
+  }
+  
+  .question {
+    padding: 1.5rem;
+  }
+  
+  .question p {
+    font-size: 1.2rem;
+  }
+}
