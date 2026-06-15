@@ -170,6 +170,14 @@ function App() {
         { text: "<tr>", correct: false },
         { text: "<td>", correct: false },
       ]
+    },
+    {
+      question: "Как поставить текст у h1 в центр в CSS ??",
+      options: [
+        { text: "text-align: center;", correct: true },
+        { text: "margin: 0 auto;", correct: false },
+        { text: "display: flex; justify-content: center;", correct: false },
+      ]
     }
   ];
 
